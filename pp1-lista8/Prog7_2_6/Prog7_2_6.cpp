@@ -6,22 +6,29 @@
 
 using namespace std;
 
-void kopiuj(struct punktn tab1[], struct punktn tab2[], int n)
+void kopiuj(punktn tab1[], punktn tab2[], unsigned int n)
 {
 	int i;
-	int j;
-for (i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		tab2[i].t = malloc(tab1[i].x * sizeof(double));
-		for (j = 0; j < tab1[i].x; j++)
-		{
-			tab2[i].t[j] = tab1[i].t[j];
-		}
+		tab2[i] = tab1[i];
 	}
 }
 
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	const int rozmiarPrzestrzeni = 3;
+	const int iloscPunktow = 3;	
+	double wspolrzedne1[rozmiarPrzestrzeni] = { 1.0, 1.0, 1.0 };
+	double wspolrzedne2[rozmiarPrzestrzeni] = { 1.0, 1.0, 0.0 };
+	double wspolrzedne3[rozmiarPrzestrzeni] = { 0.0, 1.0, 1.0 };
+	punktn punkt1(rozmiarPrzestrzeni, wspolrzedne1);
+	punktn punkt2(rozmiarPrzestrzeni, wspolrzedne2);
+	punktn punkt3(rozmiarPrzestrzeni, wspolrzedne3);
+	punktn tab1[iloscPunktow] = { punkt1, punkt2, punkt3 };
+	punktn tab2[iloscPunktow];
+	cout << sizeof(punkt1) << endl;
+	kopiuj(tab1, tab2, iloscPunktow);
+	cout << "tab2[0] = " << tab2[0].toString() << " " << "tab2[1] = " << tab2[1].toString() << " " << "tab2[2] = " << tab2[2].toString() << " "  << endl;
 }

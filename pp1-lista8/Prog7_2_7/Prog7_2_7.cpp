@@ -6,7 +6,7 @@
 
 using namespace std;
 
-zespolone dodaj(zespolone a, zespolone b)
+zespolone dodaj(const zespolone& a, const zespolone& b)
 {
 	zespolone wynik;
 	wynik.re = a.re + b.re;

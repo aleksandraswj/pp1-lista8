@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void ustawDane(struct student *a)
+void ustawDane(student* a)
 {
 	cout << "Podaj imie: ";
 	cin >> a->imie;
@@ -21,7 +21,7 @@ void ustawDane(struct student *a)
 	cout << "Podaj numer legitymacji: ";
 	cin >> a->numer_legitymacji;
 }
-void wypiszDane(struct student *b)
+void wypiszDane(student* b)
 {
 	cout << "Imie: " << b->imie << endl;
 	cout << "Nazwisko: " << b->nazwisko << endl;
@@ -33,10 +33,9 @@ void wypiszDane(struct student *b)
 
 int main()
 {
-	student* a;
-	student b;
-	a = &b;
-	ustawDane(a);
-	wypiszDane(a);
+	student a;
+
+	ustawDane(&a);
+	wypiszDane(&a);
 }
 
