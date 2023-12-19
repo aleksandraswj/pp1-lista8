@@ -16,7 +16,7 @@ void kopiuj(punkt tab1[], punkt tab2[], int n)
 
 int main()
 {
-	punkt tab1[5] = { {1,10},{1,2},{50,60},{90,92},{90,90} };
+	punkt tab1[5] = { {1,10,12},{1,2,5},{50,60,80},{90,92,94},{90,90,90} };
 	punkt tab2[5];
     kopiuj(tab1, tab2, 5);	
     cout << tab2[0].toString() << " " << tab2[1].toString() << " " << tab2[2].toString() << " " << tab2[3].toString() << " " << tab2[4].toString() << endl;

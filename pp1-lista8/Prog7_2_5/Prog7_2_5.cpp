@@ -15,6 +15,9 @@ void kopiuj(punkt10 tab1[], punkt10 tab2[], int n)
 }
 
 
-
+int main()
+{
+	
+}
 
 

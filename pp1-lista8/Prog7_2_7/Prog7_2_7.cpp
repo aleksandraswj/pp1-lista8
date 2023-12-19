@@ -18,10 +18,6 @@ int main()
 {
 	zespolone a, b, c;
 	cin>>a.re>>a.im>>b.re>>b.im;
-	a.re = 1;
-	a.im = 2;
-	b.re = 3;
-	b.im = 4;
 	c = dodaj(a, b);
 	cout << c.re << " " << c.im << endl;
 }

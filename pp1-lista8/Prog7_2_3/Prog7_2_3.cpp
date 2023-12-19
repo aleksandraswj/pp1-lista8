@@ -4,17 +4,19 @@
 #include <iostream>
 #include <cmath>	
 #include <limits>
+#include <math.h>
 #include "punkt.h"
 using namespace std;
 
 double minOdleglosc(punkt tab[], size_t n)
 {
-	double min = numeric_limits<double>::max();
-	for (int i = 0; i < n; i++)
+	double odleglosc;
+	double min = sqrt(pow(tab[1].x - tab[0].x, 2) + pow(tab[1].y - tab[0].y, 2) + pow(tab[1].z - tab[0].z, 2));
+	for (int i = 0; i < n-1; i++)
 	{
 		for (int j = i+1; j < n; j++)
 		{
-			double odleglosc = sqrt(pow(tab[i].x - tab[j].x, 2) + pow(tab[i].y - tab[j].y, 2));
+			double odleglosc = sqrt(pow(tab[j].x - tab[i].x, 2) + pow(tab[j].y - tab[i].y, 2) + pow(tab[j].z - tab[i].z, 2));
 			if (odleglosc < min)
 			{
 				min = odleglosc;
@@ -25,7 +27,7 @@ double minOdleglosc(punkt tab[], size_t n)
 }
 int main()
 {
-    punkt tab[5] = { {1,10},{1,2},{50,60},{90,92},{90,90} };	
-    cout << minOdleglosc(tab, 5) << endl;
+    punkt tab[5] = { {1,10,12},{1,2,6},{50,60,80} };	
+    cout << minOdleglosc(tab, 3) << endl;
 }
 
